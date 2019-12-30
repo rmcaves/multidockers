@@ -8,7 +8,8 @@ before_install:
 
 script:
     # - docker run -e CI=true rmcaves/react-test npm test
-    - docker run rmcaves/react-test npm test
+    # - docker run rmcaves/react-test npm test
+    
 after_success:
     - docker build -t rmcaves/multi-client ./client
     - docker build -t rmcaves/multi-nginx ./nginx
