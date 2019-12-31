@@ -11,16 +11,16 @@ script:
     # - docker run rmcaves/react-test npm test
     
 after_success:
-    - docker build -t rmcaves/multi-client ./client
-    - docker build -t rmcaves/multi-nginx ./nginx
-    - docker build -t rmcaves/multi-server ./server
-    - docker build -t rmcaves/multi-worker ./worker
+    - docker build -t bmcavestany/multi-client ./client
+    - docker build -t bmcavestany/multi-nginx ./nginx
+    - docker build -t bmcavestany/multi-server ./server
+    - docker build -t bmcavestany/multi-worker ./worker
     # Log in to the dock CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
-    - docker push rmcaves/multi-client
-    - docker push rmcaves/multi-nginx
-    - docker push rmcaves/multi-server
-    - docker push rmcaves/multi-worker
+    - docker push bmcavestany/multi-client
+    - docker push bmcavestany/multi-nginx
+    - docker push bmcavestany/multi-server
+    - docker push bmcavestany/multi-worker
 
 
