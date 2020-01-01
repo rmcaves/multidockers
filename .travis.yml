@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-#  - docker build -t bmcavestany/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t bmcavestany/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-#   - docker run bmcavestany/react-test npm test -- --coverage
+   - docker run -e CI=true bmcavestany/react-test npm test
 
 after_success:
   - docker build -t bmcavestany/multi-client ./client
